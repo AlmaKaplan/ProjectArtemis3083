@@ -1,8 +1,31 @@
-// Copyright (c) FIRST and other WPILib contributors.
-// Open Source Software; you can modify and/or share it under the terms of
-// the WPILib BSD license file in the root directory of this project.
 
 package frc.robot.subsystems.IntakeRollers;
 
-/** Add your docs here. */
-public class IntakeRoller {}
+import com.MAutils.Subsystems.DeafultSubsystems.Systems.PowerControlledSystem;
+
+import edu.wpi.first.wpilibj.DigitalInput;
+import frc.robot.PortMap;
+
+public class IntakeRoller extends PowerControlledSystem {
+    private static IntakeRoller intakeRoller;
+    private DigitalInput intakeIR;
+
+    private IntakeRoller() {
+        super("IntakeRoller", IntakeRollerConstants.systemConstants,
+                IntakeRollerConstants.INTAKE,
+                IntakeRollerConstants.IDLE);
+    
+        intakeIR = new DigitalInput(PortMap.IntakeConatants.INTAKE_IR_SENSOR); 
+    }
+
+    public boolean isGamePieceInIntake() {
+        return intakeIR.get(); 
+    }
+
+    public static IntakeRoller getInstants() {
+        if (intakeRoller == null) {
+            intakeRoller = new IntakeRoller();
+        }
+        return intakeRoller;
+    }
+}

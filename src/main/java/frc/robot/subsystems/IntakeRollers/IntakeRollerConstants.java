@@ -1,8 +1,19 @@
-// Copyright (c) FIRST and other WPILib contributors.
-// Open Source Software; you can modify and/or share it under the terms of
-// the WPILib BSD license file in the root directory of this project.
-
 package frc.robot.subsystems.IntakeRollers;
 
+import com.MAutils.RobotControl.SubsystemState;
+import com.MAutils.Subsystems.DeafultSubsystems.Constants.PowerSystemConstants;
+
 /** Add your docs here. */
-public class IntakeRollerConstants {}
+public class IntakeRollerConstants {
+
+    public static final PowerSystemConstants systemConstants = new PowerSystemConstants();
+
+    public static SubsystemState INTAKE = new SubsystemState( "INTAKE");
+    public static SubsystemState IDLE = new SubsystemState("IDLE");
+    public static SubsystemState L1_EJECT = new SubsystemState("L1_EJECT");
+
+    public static final double INTAKE_VOLT = 0.5;
+    public static final double EJECT_L1_VOLTAGE = -0.5;
+}
+
+

@@ -7,6 +7,7 @@ import com.MAutils.RobotControl.DeafultRobotContainer;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.Arm.Arm;
 import frc.robot.subsystems.Elevator.Elevator;
+import frc.robot.subsystems.Gripper.Gripper;
 import frc.robot.subsystems.IntakeAngle.IntakeAngle;
 import frc.robot.subsystems.IntakeRollers.IntakeRoller;
 import frc.robot.subsystems.Transfer.Transfer;
@@ -18,6 +19,7 @@ public class RobotContainer extends DeafultRobotContainer{
   public static Transfer transfer;
   public static IntakeAngle intakeAngle;
   public static IntakeRoller intakeRoller;
+  public static Gripper gripper;
 
   public RobotContainer() {
     arm = Arm.getInstants();
@@ -25,12 +27,10 @@ public class RobotContainer extends DeafultRobotContainer{
     transfer = Transfer.getInstants();
     intakeAngle = IntakeAngle.getInstants();
     intakeRoller = IntakeRoller.getInstants();
+    gripper = Gripper.getInstants();
 
     setDriverController(new PS5MAController(0));
     setDriverController(new PS5MAController(1));
-
-    
-
 
     configureBindings();
   }

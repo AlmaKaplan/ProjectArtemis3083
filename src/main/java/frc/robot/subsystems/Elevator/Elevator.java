@@ -19,7 +19,6 @@ public class Elevator extends PositionControlledSystem {
         if (elevator == null) {
             elevator = new Elevator();
         }
-
         return elevator;
     }
 

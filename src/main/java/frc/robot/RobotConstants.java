@@ -14,7 +14,6 @@ public class RobotConstants {
     public static final RobotState IDLE = 
     new RobotState("IDLE", 
     IntakeAngleConstants.IDLE,
-    IntakeRollerConstants.IDLE,
     ArmConstants.IDLE,
     ElevatorConstants.IDLE,
     TransferConstants.IDLE);
@@ -22,7 +21,6 @@ public class RobotConstants {
     public static final RobotState INTAKE = 
     new RobotState("INTAKE", 
     IntakeAngleConstants.INTAKE,
-    IntakeRollerConstants.INTAKE,
     ArmConstants.INTAKE,
     ElevatorConstants.INTAKE,
     TransferConstants.FORWARD);

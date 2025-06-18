@@ -5,6 +5,7 @@ import com.MAutils.Subsystems.DeafultSubsystems.Systems.PositionControlledSystem
 
 
 public class Arm extends PositionControlledSystem {
+  public static Arm arm;
   
   public Arm() {
     super("Arm", ArmConstants.systemConstants, 
@@ -15,8 +16,10 @@ public class Arm extends PositionControlledSystem {
     );
   }
 
-  @Override
-  public void periodic() {
-
+  public static Arm getInstants() {
+    if (arm == null) {
+      arm = new Arm();
+    }
+    return arm;
   }
 }
