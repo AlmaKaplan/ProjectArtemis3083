@@ -34,7 +34,7 @@ public class ArmCommand extends SubsystemCommand {
     }
 
     public void CantMove() {
-        arm.setVoltage(0);
+        arm.setPosition(arm.getPosition());
     }
 
 }

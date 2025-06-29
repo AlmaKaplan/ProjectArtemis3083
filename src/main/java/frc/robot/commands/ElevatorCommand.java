@@ -34,6 +34,7 @@ public class ElevatorCommand extends SubsystemCommand {
     }
 
     public void CantMove() {
+        elevator.setPosition(elevator.getPosition());
     }
 
 }

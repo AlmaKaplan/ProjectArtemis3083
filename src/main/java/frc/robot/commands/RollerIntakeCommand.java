@@ -14,7 +14,6 @@ public class RollerIntakeCommand extends SubsystemCommand {
         super(intake);
     }
 
-    @Override
     public void Automatic() {
         switch (intake.getCurrentState().stateName) {
             case "IDLE":
@@ -24,20 +23,18 @@ public class RollerIntakeCommand extends SubsystemCommand {
                 intake.setVoltage(IntakeRollerConstants.INTAKE_VOLT);
                 break;
             case "L1_EJECT":
-                intake.setVoltage(0.5);
+                intake.setVoltage(IntakeRollerConstants.EJECT_L1_VOLTAGE);
                 break;
         }
     }
 
-    @Override
+
     public void Manual() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Manual'");
+ 
     }
 
-    @Override
+
     public void CantMove() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'CantMove'");
+        intake.setVoltage(0);
     }
 }

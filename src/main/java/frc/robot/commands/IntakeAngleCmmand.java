@@ -34,7 +34,7 @@ public class IntakeAngleCmmand extends SubsystemCommand {
     }
 
     public void CantMove() {
-        intakeArm.setVoltage(0);
+        intakeArm.setPosition(intakeArm.getPosition());
     }
 
 }
